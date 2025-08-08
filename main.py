@@ -32,8 +32,5 @@ async def extract_text_from_invoice(file: UploadFile = File(...)):
     with open(json_path, "w") as json_file:
         json.dump(result_data, json_file, indent=4)
 
-    # Do NOT delete the uploaded file (keep it in uploads)
-    # os.remove(file_path)
-
     # Return the result as JSON
     return JSONResponse(content=result_data)
